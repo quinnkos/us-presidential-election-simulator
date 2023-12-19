@@ -32,7 +32,6 @@ states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
 def run(elecVotes, totalDemRep, trueDemVotes):
 
   roP = roPScale.get()
-  print(trueDemVotes)
   for b in range(56):
     trueDemVotes[b] -= skewScale.get()/2
 
@@ -707,13 +706,6 @@ def prepareRun():
   #reorganize 2020 dataframe
   if yearScale.get() == 2020:
     data = data.iloc[0:20].append(data.iloc[22:24]).append(data.iloc[20:22]).append(data.iloc[24:29]).append(data.iloc[38:39]).append(data.iloc[35:38]).append(data.iloc[29:35]).append(data.iloc[38:]).reset_index(drop=True)
-    print(data)
-
-  '''if yearScale.get() == 2020:
-      data.iloc[20:21] = data.iloc[20:21].shift(2)
-      #data.iloc[29:34] = data.iloc[29:34].shift(4)
-      #data.iloc[29:31] = data.iloc[29:31].shift(1)
-      print(data)'''
 
   #removes irrelevant columns
   i = 0
